@@ -1,6 +1,6 @@
-### Application for SMILE to descriptors and fingerprint generators
+## Application for SMILE to descriptors and fingerprint generators
 
-## To run this application you need to provide a csv file as input and it'll return you a csv file with molecule descriptors as output.
+### To run this application you need to provide a csv file as input and it'll return you a csv file with molecule descriptors as output.
 
 `
 python fingerprint_and_descriptor.py --input_file data/smiles_input.csv --output_file data/smile.csv --remove_salt --method descriptors
@@ -23,11 +23,11 @@ It'll produce your <input filename>_descriptor.csv with the necessary header and
 `python fingerprint_and_descriptor.py --input_file data/smiles_input.csv --output_file data/smile.csv --remove_salt --method fingerprint --fp_type Morgan --n_bits 1024`
 
 In fingerprint types there are 5 different types of fingerprint added:
-##Morgan
-##RDKit
-##Atom
-##MACCS
-##Topological
+### Morgan
+### RDKit
+### Atom
+### MACCS
+### Topological
 Default fingerprint type is Morgan and default n_bits is 2048
 
 As an output it'll produce <input filename>_fingerprint.csv
