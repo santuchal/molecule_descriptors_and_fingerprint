@@ -13,16 +13,25 @@ def _parse_args():
     parser.add_argument('--output_file',
                         help='Path to the output file',
                         type=str)
-    parser.add_argument('--method',
-                        choices=['descriptor'],
-                        default='descriptor',
-                        help='Calculation descriptors',
-                        type=str)
     parser.add_argument('--remove_salt',
                         action=argparse.BooleanOptionalAction,
-                        default='--remove_salt',
+                        default='',
                         help='Removing salts from SMILE.',
                         type=bool)
+    parser.add_argument('--method',
+                        choices=['all','descriptor','fingerprint'],
+                        default='all',
+                        help='Calculation descriptors and/or fingerprint',
+                        type=str)
+    parser.add_argument('--fp_type',
+                        choices=['Morgan', 'RDKit', 'Atom', 'MACCS', 'Topological'],
+                        default='Morgan',
+                        help='(Optional) Types of Fingerprint',
+                        type=str)
+    parser.add_argument('--n_bits',
+                        default=2048,
+                        help='(Optional) Number of bits of a given fingerprints type',
+                        type=int)
 
     args = parser.parse_args()
     return args
